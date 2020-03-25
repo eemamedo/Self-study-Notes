@@ -131,7 +131,7 @@ Example:
 dec_to_bin(6) ==> "110"
 
 dec_to_bin(5) ==> "101"
-'''
+
 
 def dec_to_bin (number):
     if number//2 == 0:
@@ -139,6 +139,77 @@ def dec_to_bin (number):
     else:
         return str(dec_to_bin(number//2)) + str(number%2) 
     
-    
-
 print (dec_to_bin(6))
+'''
+
+'''
+Write a function - duplicate_items to find the redundant or repeated items in a list and return them in sorted order. 
+This method should return a list of redundant integers in ascending sorted order (as illustrated below). 
+
+Examples:
+duplicate_items([1, 3, 4, 2, 1]) => [1]
+
+duplicate_items([1, 3, 4, 2, 1, 2, 4]) => [1, 2, 4]
+
+def duplicate_items(list_numbers):
+    duplicates = []
+    for i in list_numbers:
+        counter = list_numbers.count(i)
+        if counter>1:
+            duplicates.append(i)   
+    return list(set(duplicates))
+
+print (duplicate_items([1, 3, 4, 2, 1, 2, 4]))
+'''
+
+
+'''
+
+The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... 
+The next number is found by adding up the two numbers before it.
+Write a recursive method fib(n) that returns the nth Fibonacci number. 
+n is 0 indexed, which means that in the sequence 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..., n == 0 should 
+return 0 and n == 3 should return 2. 
+
+Assume n is less than 15.
+Even though this problem asks you to use recursion, 
+more efficient ways to solve it include using an Array, 
+or better still using 3 volatile variables to keep a track of all required values. 
+Check out this blog post to examine better solutions for this problem.
+
+Examples:
+fib(0) ==> 0
+
+fib(1) ==> 1
+
+fib(3) ==> 2
+fib(10) ==> 55
+'''
+def fib(n):
+    if n==0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+n = 10
+print (fib(n))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
