@@ -184,7 +184,7 @@ fib(1) ==> 1
 
 fib(3) ==> 2
 fib(10) ==> 55
-'''
+
 def fib(n):
     if n==0:
         return 0
@@ -195,14 +195,67 @@ def fib(n):
 
 n = 10
 print (fib(n))
+'''
+
+'''
+Recursion practice problems:
+https://www.w3resource.com/python-exercises/data-structures-and-algorithms/python-recursion.php
+'''
+'''
+1. Write a Python program to calculate the sum of a list of numbers.
+'''
+def sum_of_numbers(arr):
+    if len(arr)==1:
+        return arr[0]
+    else:
+        return arr[0] + sum_of_numbers(arr[1:])
+
+arr = [2, 4, 5, 6, 7]
+print(sum_of_numbers(arr))
+
+'''
+2. Get a factorial of a non-negative number
+'''
+def fact(n):
+    if n>0:
+        if n==1:
+            return 1
+        else:
+            return n * fact(n-1)
+    else:
+        print ('Negative number. Code is breaking')
+   
+print (fact(5))
+
+'''
+3. Write a Python program to get the sum of a non-negative integer
+'''
+def list_to_int (arr):
+    s = map(str, arr) #[str(x) for x in placeholder]
+    s = ''.join(s)
+    s = int(s)
+    return s
 
 
+def sumDigits (num):
+    placeholder = [int(x) for x in str(num)]
+    if len(placeholder)==1:
+        return placeholder[0]
+    else:
+        return placeholder[0] + sumDigits(list_to_int(placeholder[1:]))
+print (sumDigits(345))
 
 
+'''
+4. Write a Python program to calculate the value of 'a' to the power 'b'
+'''
+def power_a_b (a,b):
+    if b == 0: #or b==1: return a
+        return 1
+    else:
+        return a * power_a_b(a, b-1)
 
-
-
-
+print (power_a_b(3, 4))
 
 
 
