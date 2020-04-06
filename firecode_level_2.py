@@ -155,9 +155,9 @@ Note: Check out the Use Me section to get the structure of the Range class.
 
 Input List: [[1,10], [5,8], [8,15]] XXXX
 [[1,15]]
-Input List: [[1,2], [2,5], [8,10], [15,20]] XXXX
+Input List: [[1,2], [2,5], [8,10], [15,20]] 
 [[1,5], [8,10], [15,20]]
-Input List: [[1,5], [5,10], [11,15] ,[15,20]] XXXX
+Input List: [[1,5], [5,10], [11,15] ,[15,20]] 
 [[1,10], [11,20]]
 Input List: [[1,4], [3,7], [5,10], [11,15]]
 [[1,10], [11,15]]
@@ -188,7 +188,7 @@ def merge_ranges(input_range_list):
         lb_curr = min (input_range_list[i])
         ub_curr = max (input_range_list[i])
         if (lb_curr <= ub_prev):
-            merged = [lb_prev, max(ub_prev,ub_curr)]
+            merged = [lb_prev, ub_curr]
             previous = merged
             print ('prev', previous)
         else:
@@ -202,7 +202,7 @@ def merge_ranges(input_range_list):
 
 
 
-input_range_list = [[1,2], [2,5], [8,10], [15,20]]
+input_range_list = [[1,10], [5,8], [8,15]] 
 output =  merge_ranges(input_range_list)
 arr = [1,2]
 
