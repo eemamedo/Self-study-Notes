@@ -89,7 +89,7 @@ class SinglyLinkedList:
             node.setData(data) #gets new data
             node.setNext(self.head) #step 1: next node of a new data points to current head
             self.head = node # step 2: head now points to the newest node
-            print ('this is head', self.head.data) #returns the memory allocation
+            #print ('this is head', self.head.data) #returns the memory allocation
         else: #if yes, then new data and pointer of head
             node.setData(data)
             self.head = node #Instance of the Node() class. same as self.head = Node(data). To get data in this case: self.head.data
@@ -108,6 +108,17 @@ class SinglyLinkedList:
             while (curr_val.next): #gets the next part of the node (head|next -> data|next)
                 curr_val = curr_val.next #traversing until the end   
             curr_val.next = node
+       
+    def reverse(self):
+        last_val = None
+        curr_val = self.head
+        while (curr_val):
+            next_val = curr_val.getNext()
+            if next_val is None:
+                self.head = curr_val
+            curr_val.setNext(last_val)
+            last_val = curr_val
+            curr_val=next_val
             
                
     def print_list(self):
@@ -127,15 +138,15 @@ will return the actual integer (curr_val.next). Once it says None, you terminate
 If you do curr_val.getNext() after curr_val.next (after the loop is terminated), you should get a number. But doing it twice, should get you
 None (it does)
 
-
+'''
       
 sll = SinglyLinkedList()
-sll.insert_at_front(1)
-sll.insert_at_front(2)
-sll.insert_at_front(3)
-sll.insertAtEnd(7)
-sll.print_list()     
-'''
+sll.insertAtEnd(1)
+sll.insertAtEnd(2)
+sll.insertAtEnd(3)
+ 
+sll.reverse()
+sll.print_list()
 
 
 '''
@@ -163,7 +174,7 @@ Input List: [[1,4], [3,7], [5,10], [11,15]]
 [[1,10], [11,15]]
 Input List: [[5,50], [25,100], [150,200]]
 [[5,100], [150,200]]
-'''      
+   
 
 class Range(object):
     def __init__(self):
@@ -205,7 +216,7 @@ def merge_ranges(input_range_list):
 input_range_list = [[1,10], [5,8], [8,15]] 
 output =  merge_ranges(input_range_list)
 arr = [1,2]
-
+'''   
 
 
 
